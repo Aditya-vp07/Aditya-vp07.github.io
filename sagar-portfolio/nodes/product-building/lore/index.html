@@ -212,7 +212,7 @@
 <script src="../../assets/js/data.js"></script>
 <script>
 var __ROOT = (function(){ var p = decodeURIComponent(location.pathname); var mm = p.match(/^(.*\/)(nodes\/[^\/]+\/)?$/); return mm ? mm[1] : "/"; })();
-document.body.dataset.basepath = location.origin + __ROOT;
+document.body.dataset.basepath = (location.origin + __ROOT).replace(/\/+$/, "");
 window.__KIRBY_QUERY = function(n){
   var m = /page\('(.*)'\)/.exec((n && n.query) || "");
   var uri = m ? m[1] : "error";
